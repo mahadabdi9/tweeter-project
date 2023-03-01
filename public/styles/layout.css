@@ -21,11 +21,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.container {
-  width: 90%;
-  background-color: #f4f1ec;
-  align-items: center;
-}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
