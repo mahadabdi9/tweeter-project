@@ -1,4 +1,4 @@
-header {
+.main-header {
   height: 400px;
   width: 100%;
   display: flex;
@@ -11,7 +11,7 @@ header {
   margin: 120px 0 0 0;
 }
 
-header h2 {
+.main-header h2 {
   margin: -25px 0 0 0;
   padding: 0;
 }

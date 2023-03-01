@@ -32,7 +32,7 @@
       <span>Write a new tweet <i class="fa-solid fa-angles-down"></i></span>
     </nav>
 
-    <header>
+    <header class="main-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -47,13 +47,34 @@
       <section class="new-tweet">
         <form action="/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" class="tweet-text"></textarea>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+
+      <article class="tweet">
+        <header>
+          <h2>Rhoda Jacobs</h2>
+          <h2>@MrsJacobs</h2>
+        </header>
+        <div>
+          <form action="">
+            <label for="">Hello World!</label>
+            <textarea name="" class="tweet-text" cols="30" rows="1"></textarea>
+          </form>
+          <footer>
+            <p>10 days ago</p>
+            <div>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-retweet"></i>
+            </div>
+          </footer>
+        </div>
+      </article>
     </main>
   </body>
 </html>

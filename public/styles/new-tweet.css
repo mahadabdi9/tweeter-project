@@ -1,4 +1,4 @@
-section {
+.container {
   width: 90%;
   background-color: #f4f1ec;
   align-items: center;
@@ -15,7 +15,7 @@ section {
   justify-content: space-between;
 }
 
-#tweet-text {
+.tweet-text {
   background-color: #f4f1ec;
   border: hidden;
   border-bottom: 3px solid black;
@@ -31,4 +31,32 @@ div button {
 
 .counter {
   font-family: 'Bungee', cursive;
+}
+
+.tweet{
+  border-style: solid;
+  margin-top: 20px;
+}
+
+.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet i:hover {
+  color: yellow;
 }
