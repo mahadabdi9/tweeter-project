@@ -3,7 +3,7 @@
   $(document).ready(function() {
     console.log("hello")
   
-    $("#tweet-text").on ("keyup", function() {
+    $(".tweet-text").on ("keyup", function() {
       const inputLength = $(this).val().length
       const charsLeft = 140-inputLength
       console.log(charsLeft)

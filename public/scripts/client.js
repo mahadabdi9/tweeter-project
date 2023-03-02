@@ -30,6 +30,14 @@ $(document).ready(function () {
     }
   ]
 
+  $("#tweetForm").on("submit", function(event) {
+    event.preventDefault();
+    $.ajax("/tweets", {
+      method: "POST",
+      data: $(this).serialize()
+    })
+    console.log(event);
+  })
 
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
