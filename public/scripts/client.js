@@ -54,6 +54,21 @@ const createTweetElement = function(tweet) {
 
   $("#tweetForm").on("submit", function(event) {
     event.preventDefault();
+    const tweetArea = $(".tweet-text").val().trim().length;
+    if (!tweetArea) {
+      $(".error").text("Tweet Area cannot be empty");
+      $(".error").slideDown("slow")
+      $(".error").delay(4000).slideUp("slow");
+
+      return;
+    }
+    if (tweetArea > 140) {
+      $(".error").text("Tweet cannot be more than 140 characters‼️");
+      $(".error").slideDown("slow")
+      $(".error").delay(4000).slideUp("slow");
+
+      return;
+    }
     $.ajax({
       url: '/tweets',
       method: 'POST',
@@ -74,3 +89,4 @@ const createTweetElement = function(tweet) {
 })
 
 })
+
