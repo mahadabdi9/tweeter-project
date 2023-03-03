@@ -5,46 +5,25 @@
  */
 
 $(document).ready(function () {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
+
+
+  const loadTweets = function () {
+    $.ajax("/tweets").then(function (response) {
+      renderTweets(response);
+    });
+  };
+  loadTweets();
+  $(".error").hide();
+
+
+  const renderTweets = function(tweets) {
+    $("#tweets-container").empty();
+    for (let tweet of tweets) {
+      const tweetElement = createTweetElement(tweet);
+       $("#tweets-container").prepend(tweetElement);
     }
-  ]
-
-  $("#tweetForm").on("submit", function(event) {
-    event.preventDefault();
-    $.ajax("/tweets", {
-      method: "POST",
-      data: $(this).serialize()
-    })
-    console.log(event);
-  })
-
-const renderTweets = function(tweets) {
-  for (let tweet of tweets) {
-    const tweetElement = createTweetElement(tweet);
-     $("#tweets-container").prepend(tweetElement);
   }
-}
+
 
 const createTweetElement = function(tweet) {
     let $tweet = $("<article>").addClass("tweet");
@@ -59,7 +38,7 @@ const createTweetElement = function(tweet) {
             <textarea name="" class="tweet-text" cols="30" rows="1">${tweet.content.text}</textarea>
           </form>
           <footer>
-            <p>10 days ago</p>
+          ${timeago.format(tweet.created_at)}
             <div>
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-heart"></i>
@@ -71,6 +50,27 @@ const createTweetElement = function(tweet) {
     return tweetElement;
   };
 
-renderTweets(data);
+
+
+  $("#tweetForm").on("submit", function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function() {
+        loadTweets();
+        $(".tweet-text").val("")
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus + ': ' + errorThrown);
+      }
+    });
+
+
+
+
+
 })
 
+})

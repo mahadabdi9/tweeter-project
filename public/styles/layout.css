@@ -21,7 +21,25 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+@media (min-width:1024px) {
+  body .container {
+    margin-left: inherit;
+    margin-right: inherit;
+    width: 60%;
+  }
 
+  .display header {
+    width:30%;
+  }
+
+  .display {
+    display: flex;
+    flex-direction: row;
+    margin-top: 170px;
+    justify-content: space-between;
+
+  }
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
