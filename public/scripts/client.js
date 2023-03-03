@@ -24,6 +24,12 @@ $(document).ready(function () {
     }
   }
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
 
 const createTweetElement = function(tweet) {
     let $tweet = $("<article>").addClass("tweet");
@@ -35,7 +41,7 @@ const createTweetElement = function(tweet) {
         <div>
           <form action="">
             <label for=""></label>
-            <textarea name="" class="tweet-text" cols="30" rows="1">${tweet.content.text}</textarea>
+            <textarea name="" class="tweet-text" cols="30" rows="1">${escape(tweet.content.text)}</textarea>
           </form>
           <footer>
           ${timeago.format(tweet.created_at)}
