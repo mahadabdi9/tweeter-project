@@ -2,7 +2,7 @@
   width: 90%;
   background-color: #f4f1ec;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 
 .new-tweet form {
@@ -36,12 +36,25 @@ div button {
 .tweet{
   border-style: solid;
   margin-top: 20px;
+  padding: 1rem;
+  box-shadow: 3px 3px;
+  margin-top: 20px;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px #008a3c;
+}
+
+#tweets-container {
+  margin-top: 40px;
 }
 
 .tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .tweet form {
@@ -58,6 +71,12 @@ div button {
 }
 
 .tweet i:hover {
-  color: yellow;
+  color: #008a3c;
+}
+
+.avatar-username {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 

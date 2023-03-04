@@ -36,10 +36,22 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 170px;
-    margin-left: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
     justify-content: space-between;
-
   }
+
+  .tweet header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .tweet-text {
+    padding-bottom: 1em;
+  }
+
 }
 
 /*

@@ -34,8 +34,11 @@ $(document).ready(function () {
 const createTweetElement = function(tweet) {
     let $tweet = $("<article>").addClass("tweet");
     const html = `
-      <header>
+        <header>
+          <div class="avatar-username">
+          <img class="tweet--avatar" src="${tweet.user.avatars}"> 
           <h4>${tweet.user.name}</h4>
+          </div>
           <h4>${tweet.user.handle}</h4>
         </header>
         <div>
@@ -87,9 +90,6 @@ const createTweetElement = function(tweet) {
         console.log(textStatus + ': ' + errorThrown);
       }
     });
-
-
-
 
 
 })
