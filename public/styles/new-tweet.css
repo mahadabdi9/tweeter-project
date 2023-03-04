@@ -2,7 +2,7 @@
   width: 90%;
   background-color: #f4f1ec;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 auto;
 }
 
 .new-tweet form {
@@ -20,20 +20,20 @@
   border: hidden;
   border-bottom: 3px solid black;
   margin-bottom: 5px;
+  padding-bottom: 0.5em;
 }
 
-
 div button {
-  background-color: #4056A1;
+  background-color: #4056a1;
   color: white;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
 .counter {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
-.tweet{
+.tweet {
   border-style: solid;
   margin-top: 20px;
   padding: 1rem;
@@ -62,7 +62,6 @@ div button {
   flex-direction: column;
 }
 
-
 .tweet footer {
   display: flex;
   flex-direction: row;
@@ -79,4 +78,3 @@ div button {
   align-items: center;
   justify-content: center;
 }
-
